@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "PhotoShare",
+    "slug": "PhotoShare",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
