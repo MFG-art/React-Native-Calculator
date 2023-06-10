@@ -8,8 +8,8 @@ public class CalculatorActivity extents ReactActivity {
         super.onCreate(null)
     }
 
-    fun parseString(String s){
-        List parsedString = s.split("+","-","*","/")
+    fun parseString(String s) {
+        List parsedString = s . split ("+", "-", "*", "/")
         s.indexOf('+')
     }
 }
