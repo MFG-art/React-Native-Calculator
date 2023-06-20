@@ -16,80 +16,57 @@ const [text, setText] = useState('');
                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"1")}>
                  <Text>1</Text>
                </TouchableOpacity>
-
                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"2")}>
                  <Text>2</Text>
                </TouchableOpacity>
-
                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"3")}>
                  <Text>3</Text>
                </TouchableOpacity>
-
               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"+")}>
                 <Text>+</Text>
               </TouchableOpacity>
-
           </View>
-
           <View style={styles.row}>
-
-              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"4")}>
-              <Text>4</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"5")}>
-              <Text>5</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"6")}>
-              <Text>6</Text>
-              </TouchableOpacity>
-
-            <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"-")}>
-              <Text>-</Text>
+          <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"4")}>
+            <Text>4</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"5")}>
+            <Text>5</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"6")}>
+            <Text>6</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"-")}>
+            <Text>-</Text>
+          </TouchableOpacity>
+          </View>
+           <View style={styles.row} >
+             <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"7")}>
+               <Text>7</Text>
+             </TouchableOpacity>
+             <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"8")}>
+               <Text>8</Text>
+             </TouchableOpacity>
+             <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"9")}>
+               <Text>9</Text>
+             </TouchableOpacity>
+            <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"*")}>
+              <Text>*</Text>
             </TouchableOpacity>
-
-           </View>
-
-           <View style={styles.row} >
-
-                 <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"7")}>
-                 <Text>7</Text>
-                 </TouchableOpacity>
-
-                 <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"8")}>
-                 <Text>8</Text>
-                 </TouchableOpacity>
-
-                 <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"9")}>
-                 <Text>9</Text>
-                 </TouchableOpacity>
-
-                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"*")}>
-                  <Text>*</Text>
-                </TouchableOpacity>
-
             </View>
-
            <View style={styles.row} >
-
-
                 <TouchableOpacity style={styles.numberKeys} onPress={()=>setText('')}>
                   <Text>c</Text>
                 </TouchableOpacity>
-
                 <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"0")}>
                   <Text>0</Text>
                 </TouchableOpacity>
-
                 <TouchableOpacity style={styles.numberKeys} onPress={()=>setText("Calculating...")}>
                   <Text>=</Text>
                 </TouchableOpacity>
-
                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"/")}>
                  <Text>/</Text>
                </TouchableOpacity>
-
            </View>
     </View>
   );
@@ -103,7 +80,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'column'
   },
-
   screen: {
     fontSize: 60,
     flex: 1,
@@ -111,7 +87,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
 
   },
-
   screenContainer: {
     flex: 4,
     flexDirection: 'column',
@@ -120,7 +95,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightgrey',
 
   },
-
   numberKeys:{
      backgroundColor:'lightblue',
      alignItems: 'center',
