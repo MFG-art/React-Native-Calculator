@@ -7,6 +7,7 @@ import {onPressButton} from "./ButtonActions.js";
 
 export default function App() {
 const [text, setText] = useState('');
+//const arr = {"1",2,3,+,4,5,6,-7,8,9,0};
   return (
     <View style={styles.column}>
           <View style={styles.row}>
@@ -39,7 +40,7 @@ const [text, setText] = useState('');
               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"4")}><Text>4</Text></TouchableOpacity>
             </View>
             <View style={styles.row}>
-              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"5")}><Text>5</Text></TouchableOpacity>
+              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"5")}><Text style={styles.text}>5</Text></TouchableOpacity>
             </View>
             <View style={styles.row}>
               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"6")}><Text>6</Text></TouchableOpacity>
@@ -91,20 +92,14 @@ const [text, setText] = useState('');
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column'
-  },
+
 
   screen: {
 
   },
 
   numberKeys:{
-     backgroundColor:'lightblue',
+     backgroundColor:'gray',
      alignItems: 'center',
      padding: 10,
      flex: 1
@@ -113,11 +108,16 @@ const styles = StyleSheet.create({
     column: {
       flex: 1,
       flexDirection: 'column',
-      margin: 1
+      margin: 2
     },
     row: {
       flex: 1,
       flexDirection: 'row',
-      margin: 1,
+      margin: 2,
     },
+
+    text: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
 });
