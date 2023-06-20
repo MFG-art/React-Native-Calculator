@@ -107,15 +107,17 @@ const styles = StyleSheet.create({
   screen: {
     fontSize: 60,
     flex: 1,
-    backgroundColor: 'grey',
-    textAlign: 'center',
-    verticalAlign: 'bottom',
+    flexDirection: 'column',
+    justifyContent: 'center',
+
   },
 
   screenContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    margin: 1,
+    flex: 4,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    padding: 50,
+    backgroundColor: 'lightgrey',
 
   },
 
@@ -129,11 +131,9 @@ const styles = StyleSheet.create({
     column: {
       flex: 1,
       flexDirection: 'column',
-      margin: 1
     },
     row: {
       flex: 1,
       flexDirection: 'row',
-      margin: 1,
     },
 });
