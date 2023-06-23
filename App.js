@@ -13,6 +13,7 @@ const [text, setText] = useState('');
         <View style={styles.screenContainer}>
             <Text style={styles.screen}>{text}</Text>
         </View>
+<<<<<<< HEAD
           <View style={styles.row}>
                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"1")}>
                  <Text>1</Text>
@@ -58,30 +59,82 @@ const [text, setText] = useState('');
            <View style={styles.row} >
              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"7")}>
                <Text>7</Text>
+=======
+        <View style={styles.row} >
+             <TouchableOpacity style={styles.CButton} onPress={()=>setText('')}>
+               <Text style={styles.CText}>C</Text>
+>>>>>>> main
              </TouchableOpacity>
              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"8")}>
-               <Text>8</Text>
+               <Text style={styles.text}>()</Text>
              </TouchableOpacity>
              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"9")}>
-               <Text>9</Text>
+               <Text style={styles.text}>%</Text>
              </TouchableOpacity>
             <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"*")}>
+<<<<<<< HEAD
               <Text>*</Text>
+>>>>>>> main
+=======
+              <Text style={styles.text}>/</Text>
+            </TouchableOpacity>
+         </View>
+           <View style={styles.row} >
+             <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"7")}>
+               <Text style={styles.text}>7</Text>
+             </TouchableOpacity>
+             <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"8")}>
+               <Text style={styles.text}>8</Text>
+             </TouchableOpacity>
+             <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"9")}>
+               <Text style={styles.text}>9</Text>
+             </TouchableOpacity>
+            <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"*")}>
+              <Text style={styles.text}>*</Text>
 >>>>>>> main
             </TouchableOpacity>
             </View>
+            <View style={styles.row}>
+              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"4")}>
+                <Text style={styles.text}>4</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"5")}>
+                <Text style={styles.text}>5</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"6")}>
+                <Text style={styles.text}>6</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"-")}>
+                <Text style={styles.text}>-</Text>
+              </TouchableOpacity>
+            </View>
+
+             <View style={styles.row}>
+               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"1")}>
+                 <Text style={styles.text}>1</Text>
+               </TouchableOpacity>
+               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"2")}>
+                 <Text style={styles.text}>2</Text>
+               </TouchableOpacity>
+               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"3")}>
+                 <Text style={styles.text}>3</Text>
+               </TouchableOpacity>
+              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"+")}>
+                <Text style={styles.text}>+</Text>
+              </TouchableOpacity>
+            </View>
            <View style={styles.row} >
-                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText('')}>
-                  <Text>c</Text>
+                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText("+/-")}>
+                  <Text style={styles.text}>+/-</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"0")}>
-                  <Text>0</Text>
+                  <Text style={styles.text}>0</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText("Calculating...")}>
-                  <Text>=</Text>
-                </TouchableOpacity>
-               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"/")}>
-                 <Text>/</Text>
+               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+".")}>
+                 <Text style={styles.text}>.</Text>
+               </TouchableOpacity>
+               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText("Calculating...")}>
+                 <Text style={styles.text}>=</Text>
                </TouchableOpacity>
            </View>
     </View>
@@ -117,10 +170,16 @@ const styles = StyleSheet.create({
 
   },
   numberKeys:{
+<<<<<<< HEAD
      backgroundColor:'gray',
+=======
+     backgroundColor:'darkgray',
+>>>>>>> main
      alignItems: 'center',
      padding: 10,
-     flex: 1
+     flex: 1,
+     margin:5,
+     borderRadius:999,
   },
 
     column: {
@@ -139,9 +198,30 @@ const styles = StyleSheet.create({
 =======
 >>>>>>> main
     },
+<<<<<<< HEAD
 
     text: {
         alignItems: 'center',
         justifyContent: 'center',
+=======
+    text: {
+      color:'#262626',
+      fontSize: 20,
+    },
+    CText: {
+      color: '#FFFFF0',
+      fontSize: 20,
+    },
+    CButton: {
+       backgroundColor:'#CD5C5C',
+       alignItems: 'center',
+       padding: 10,
+       flex: 1,
+       margin:5,
+       borderRadius:999,
+    },
+    buttonBackground:{
+      backgroundColor:'#404040'
+>>>>>>> main
     }
 });
