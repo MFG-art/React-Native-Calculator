@@ -100,6 +100,10 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
+    position: 'absolute',
+    left: 10,
+    right: 10,
+    bottom: 0,
 
   },
   screenContainer: {
