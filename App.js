@@ -109,6 +109,10 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
+    position: 'absolute',
+    left: 10,
+    right: 10,
+    bottom: 0,
 
   },
 
@@ -125,7 +129,8 @@ const styles = StyleSheet.create({
      backgroundColor:'lightblue',
      alignItems: 'center',
      padding: 10,
-     flex: 1
+     flex: 1,
+     borderRadius: 50,
   },
 
     column: {
