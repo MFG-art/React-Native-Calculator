@@ -112,13 +112,13 @@ const styles = StyleSheet.create({
   },
   numberKeys:{
      backgroundColor:'darkgray',
+     justifyContent:'center',
      alignItems: 'center',
      padding: 10,
      flex: 1,
-     margin:5,
-     borderRadius:999,
+     margin: 15,
+     borderRadius:100,
   },
-
     column: {
       flex: 1,
       flexDirection: 'column',
@@ -126,24 +126,33 @@ const styles = StyleSheet.create({
     row: {
       flex: 1,
       flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center'
     },
     text: {
       color:'#262626',
       fontSize: 20,
+      justifyContent: 'center',
+      alignItems: 'center'
     },
     CText: {
       color: '#FFFFF0',
       fontSize: 20,
+      justifyContent: 'center',
+            alignItems: 'center'
     },
     CButton: {
        backgroundColor:'#CD5C5C',
+       justifyContent: 'center',
        alignItems: 'center',
        padding: 10,
        flex: 1,
        margin:5,
-       borderRadius:999,
+       borderRadius:100,
     },
     buttonBackground:{
-      backgroundColor:'#404040'
+      backgroundColor:'#404040',
+      justifyContent: 'center',
+      alignItems: 'center',
     }
 });
