@@ -113,50 +113,53 @@ const styles = StyleSheet.create({
     padding: 50,
     backgroundColor: 'lightgrey',
 
+
   },
   numberKeys:{
      backgroundColor:'darkgray',
-     justifyContent:'center',
      alignItems: 'center',
+     justifyContent: 'center',
      padding: 10,
      flex: 1,
-     margin: 15,
-     borderRadius:100,
+     width:60,
+     height: 60,
+     borderRadius:30,
+     margin: 10
   },
+
     column: {
       flex: 1,
       flexDirection: 'column',
+      padding: 5
     },
     row: {
       flex: 1,
       flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center'
+      margin:10
     },
     text: {
       color:'#262626',
       fontSize: 20,
-      justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      justifyContent: 'center'
+
     },
     CText: {
       color: '#FFFFF0',
       fontSize: 20,
-      justifyContent: 'center',
-            alignItems: 'center'
     },
     CButton: {
        backgroundColor:'#CD5C5C',
-       justifyContent: 'center',
        alignItems: 'center',
        padding: 10,
        flex: 1,
+       height: 60,
+       borderRadius:30,
        margin:5,
-       borderRadius:100,
+       borderRadius:999,
     },
     buttonBackground:{
       backgroundColor:'#404040',
-      justifyContent: 'center',
-      alignItems: 'center',
+
     }
 });
