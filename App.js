@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
 import { StyleSheet, Text, View, TextInput, Button, ToastAndroid, Alert,TouchableOpacity } from 'react-native';
 import parseExpression from "./ButtonActions.js";
+import CalculatorButton from './CalculatorButton.js';
 
 
 
@@ -13,9 +14,10 @@ const [text, setText] = useState('');
             <Text style={styles.screen}>{text}</Text>
         </View>
         <View style={styles.row} >
-             <TouchableOpacity style={styles.CButton} onPress={()=>setText('')}>
+             {/* <TouchableOpacity style={styles.CButton} onPress={()=>setText('')}>
                <Text style={styles.CText}>C</Text>
-             </TouchableOpacity>
+             </TouchableOpacity> */}
+             <CalculatorButton label={'C'} onClickFunction={()=>console.log("clear!")}/>
              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"8")}>
                <Text style={styles.text}>()</Text>
              </TouchableOpacity>

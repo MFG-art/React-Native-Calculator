@@ -1,4 +1,3 @@
-import {ToastAndroid} from 'react-native';
 import { evaluate } from 'mathjs';
 
 
