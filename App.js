@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
 import { StyleSheet, Text, View, TextInput, Button, ToastAndroid, Alert,TouchableOpacity } from 'react-native';
-import buttonActions from "./ButtonActions.js";
+import parseExpression from "./ButtonActions.js";
 
 
 
@@ -22,7 +22,7 @@ const [text, setText] = useState('');
              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"9")}>
                <Text style={styles.text}>%</Text>
              </TouchableOpacity>
-            <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"*")}>
+            <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+" / ")}>
               <Text style={styles.text}>/</Text>
             </TouchableOpacity>
          </View>
@@ -36,7 +36,7 @@ const [text, setText] = useState('');
              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"9")}>
                <Text style={styles.text}>9</Text>
              </TouchableOpacity>
-            <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"*")}>
+            <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+" * ")}>
               <Text style={styles.text}>*</Text>
             </TouchableOpacity>
             </View>
@@ -50,7 +50,7 @@ const [text, setText] = useState('');
               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"6")}>
                 <Text style={styles.text}>6</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"-")}>
+              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+" - ")}>
                 <Text style={styles.text}>-</Text>
               </TouchableOpacity>
             </View>
@@ -65,12 +65,12 @@ const [text, setText] = useState('');
                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"3")}>
                  <Text style={styles.text}>3</Text>
                </TouchableOpacity>
-              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"+")}>
+              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+" + ")}>
                 <Text style={styles.text}>+</Text>
               </TouchableOpacity>
             </View>
            <View style={styles.row} >
-                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText("+/-")}>
+                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(" -")}>
                   <Text style={styles.text}>+/-</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"0")}>
@@ -79,7 +79,7 @@ const [text, setText] = useState('');
                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+".")}>
                  <Text style={styles.text}>.</Text>
                </TouchableOpacity>
-               <TouchableOpacity style={styles.numberKeys} onPress={buttonActions}>
+               <TouchableOpacity style={styles.numberKeys} onPress={()=>parseExpression(text)}>
                  <Text style={styles.text}>=</Text>
                </TouchableOpacity>
            </View>

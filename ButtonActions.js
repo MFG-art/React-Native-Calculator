@@ -1,8 +1,5 @@
 import {ToastAndroid} from 'react-native';
 
-const buttonActions = () => {
-ToastAndroid.show("Testing a Toast",ToastAndroid.SHORT);
-}
 
 const add = (x,y) => {
     return x + y;
@@ -26,7 +23,47 @@ const infixToPostfix = () => {
 
 const parseExpression = (expression) => {
     // this function will parse out a string into tokens
+    // ToastAndroid.show(expression,ToastAndroid.SHORT);
+    var expressionArray = expression.split(' ');
+    var stack = new Stack();
+
+    expressionArray.forEach(element => {
+        stack.push(element);
+    });
+
+    while (!stack.isEmpty()){
+        val = stack.pop();
+        console.log(val + "\n");
+
+    }
+}
+
+class Stack {
+
+    // https://www.geeksforgeeks.org/implementation-stack-javascript/
+
+ 
+    // Array is used to implement stack
+    constructor()
+    {
+        this.items = [];
+    }
+
+    push(item){
+        this.items.push(item);
+    }
+
+    pop(){
+        if (this.items.length > 0){
+            return this.items.pop();
+        }
+    }
+
+    isEmpty(){
+        return this.items.length == 0;
+    }
 
 }
-export default buttonActions;
+
+export default parseExpression;
 
