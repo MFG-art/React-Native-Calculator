@@ -1,4 +1,5 @@
 import {ToastAndroid} from 'react-native';
+import { evaluate } from 'mathjs';
 
 
 const add = (x,y) => {
@@ -24,18 +25,21 @@ const infixToPostfix = () => {
 const parseExpression = (expression) => {
     // this function will parse out a string into tokens
     // ToastAndroid.show(expression,ToastAndroid.SHORT);
-    var expressionArray = expression.split(' ');
-    var stack = new Stack();
+    // var expressionArray = expression.split(' ');
+    // var stack = new Stack();
 
-    expressionArray.forEach(element => {
-        stack.push(element);
-    });
+    // expressionArray.forEach(element => {
+    //     stack.push(element);
+    // });
 
-    while (!stack.isEmpty()){
-        val = stack.pop();
-        console.log(val + "\n");
+    // while (!stack.isEmpty()){
+    //     val = stack.pop();
+    //     console.log(val + "\n");
 
-    }
+    // }
+    var answer = evaluate(expression);
+    console.log(answer)
+    return answer.toString();
 }
 
 class Stack {

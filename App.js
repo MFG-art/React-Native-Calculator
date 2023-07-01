@@ -79,7 +79,7 @@ const [text, setText] = useState('');
                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+".")}>
                  <Text style={styles.text}>.</Text>
                </TouchableOpacity>
-               <TouchableOpacity style={styles.numberKeys} onPress={()=>parseExpression(text)}>
+               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(parseExpression(text))}>
                  <Text style={styles.text}>=</Text>
                </TouchableOpacity>
            </View>
