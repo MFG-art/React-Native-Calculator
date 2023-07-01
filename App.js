@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
 import { StyleSheet, Text, View, TextInput, Button, ToastAndroid, Alert,TouchableOpacity } from 'react-native';
-import {onPressButton} from "./ButtonActions.js";
+import buttonActions from "./ButtonActions.js";
 
 
 
@@ -79,7 +79,7 @@ const [text, setText] = useState('');
                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+".")}>
                  <Text style={styles.text}>.</Text>
                </TouchableOpacity>
-               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText("Calculating...")}>
+               <TouchableOpacity style={styles.numberKeys} onPress={buttonActions}>
                  <Text style={styles.text}>=</Text>
                </TouchableOpacity>
            </View>
