@@ -13,78 +13,36 @@ const [text, setText] = useState('');
         <View style={styles.screenContainer}>
             <Text style={styles.screen}>{text}</Text>
         </View>
-        <View style={styles.row} >
-             {/* <TouchableOpacity style={styles.CButton} onPress={()=>setText('')}>
-               <Text style={styles.CText}>C</Text>
-             </TouchableOpacity> */}
-             <CalculatorButton label={'C'} onClickFunction={()=>console.log("clear!")}/>
-             <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"8")}>
-               <Text style={styles.text}>()</Text>
-             </TouchableOpacity>
-             <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"9")}>
-               <Text style={styles.text}>%</Text>
-             </TouchableOpacity>
-            <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+" / ")}>
-              <Text style={styles.text}>/</Text>
-            </TouchableOpacity>
-         </View>
-           <View style={styles.row} >
-             <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"7")}>
-               <Text style={styles.text}>7</Text>
-             </TouchableOpacity>
-             <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"8")}>
-               <Text style={styles.text}>8</Text>
-             </TouchableOpacity>
-             <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"9")}>
-               <Text style={styles.text}>9</Text>
-             </TouchableOpacity>
-            <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+" * ")}>
-              <Text style={styles.text}>*</Text>
-            </TouchableOpacity>
-            </View>
             <View style={styles.row}>
-              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"4")}>
-                <Text style={styles.text}>4</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"5")}>
-                <Text style={styles.text}>5</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"6")}>
-                <Text style={styles.text}>6</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+" - ")}>
-                <Text style={styles.text}>-</Text>
-              </TouchableOpacity>
+                <CalculatorButton label={'C'} style={styles.CButton} onClickFunction={()=>setText("")}/>
+                <CalculatorButton label={'('} style={styles.numberKeys} onClickFunction={()=>setText(text+"(")}/>
+                <CalculatorButton label={')'} style={styles.numberKeys} onClickFunction={()=>setText(text+")")}/>
+                <CalculatorButton label={'/'} style={styles.numberKeys}  onClickFunction={()=>setText(text+"/")}/>
             </View>
-
-             <View style={styles.row}>
-               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"1")}>
-                 <Text style={styles.text}>1</Text>
-               </TouchableOpacity>
-               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"2")}>
-                 <Text style={styles.text}>2</Text>
-               </TouchableOpacity>
-               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"3")}>
-                 <Text style={styles.text}>3</Text>
-               </TouchableOpacity>
-              <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+" + ")}>
-                <Text style={styles.text}>+</Text>
-              </TouchableOpacity>
+            <View style={styles.row} >
+               <CalculatorButton label={'7'} style={styles.numberKeys} onClickFunction={()=>setText(text+"7")}/>
+               <CalculatorButton label={'8'} style={styles.numberKeys} onClickFunction={()=>setText(text+"8")}/>
+               <CalculatorButton label={'9'} style={styles.numberKeys} onClickFunction={()=>setText(text+"9")}/>
+               <CalculatorButton label={'*'} style={styles.numberKeys} onClickFunction={()=>setText(text+"*")}/>
             </View>
-           <View style={styles.row} >
-                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(" -")}>
-                  <Text style={styles.text}>+/-</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+"0")}>
-                  <Text style={styles.text}>0</Text>
-                </TouchableOpacity>
-               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(text+".")}>
-                 <Text style={styles.text}>.</Text>
-               </TouchableOpacity>
-               <TouchableOpacity style={styles.numberKeys} onPress={()=>setText(parseExpression(text))}>
-                 <Text style={styles.text}>=</Text>
-               </TouchableOpacity>
-           </View>
+            <View style={styles.row} >
+               <CalculatorButton label={'4'} style={styles.numberKeys} onClickFunction={()=>setText(text+"4")}/>
+               <CalculatorButton label={'5'} style={styles.numberKeys} onClickFunction={()=>setText(text+"5")}/>
+               <CalculatorButton label={'6'} style={styles.numberKeys} onClickFunction={()=>setText(text+"6")}/>
+               <CalculatorButton label={'-'} style={styles.numberKeys} onClickFunction={()=>setText(text+"-")}/>
+            </View>
+            <View style={styles.row} >
+               <CalculatorButton label={'1'} style={styles.numberKeys} onClickFunction={()=>setText(text+"1")}/>
+               <CalculatorButton label={'2'} style={styles.numberKeys} onClickFunction={()=>setText(text+"2")}/>
+               <CalculatorButton label={'3'} style={styles.numberKeys} onClickFunction={()=>setText(text+"3")}/>
+               <CalculatorButton label={'+'} style={styles.numberKeys} onClickFunction={()=>setText(text+"+")}/>
+            </View>
+            <View style={styles.row} >
+               <CalculatorButton label={'+/-'} style={styles.numberKeys} onClickFunction={()=>setText(text+" -")}/>
+               <CalculatorButton label={'0'} style={styles.numberKeys} onClickFunction={()=>setText(text+"0")}/>
+               <CalculatorButton label={'.'} style={styles.numberKeys} onClickFunction={()=>setText(text+".")}/>
+               <CalculatorButton label={'='} style={styles.numberKeys} onClickFunction={()=>setText(parseExpression(text))}/>
+            </View>
     </View>
   );
 }
