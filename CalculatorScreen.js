@@ -1,64 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
-import { ScrollView, StyleSheet, Text, View, TextInput, Button, ToastAndroid, Alert,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, ToastAndroid, Alert,TouchableOpacity } from 'react-native';
 import parseExpression from "./ButtonActions.js";
 import CalculatorButton from './CalculatorButton.js';
+import { Component } from "react";
 
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-//import CalculatorScreen from './CalculatorScreen.js'
-
-const Stack = createNativeStackNavigator();
-var expressionList = [];
-
-export default function App() {
-
-
-
-
-  return (
-  <NavigationContainer>
-  <Stack.Navigator>
-  <Stack.Screen name="Home" component={CalculatorScreen} />
-  <Stack.Screen name="History" component={HistoryScreen} options={{list: expressionList}}/>
-  </Stack.Navigator>
-  </NavigationContainer>
-
-  );
-}
-
-function clearHistory(navigation){
-expressionList.length = 0;
-navigation.navigate('History', {list: expressionList});
-}
-
-
-const HistoryScreen = ({navigation, route}) => {
-
-
-return(
-<View style={styles.column}>
-<Button title="Clear History"  onPress={()=>clearHistory(navigation)} />
-<ScrollView>
-    {route.params.list.map(
-        expression => {
-            return(
-            <View style={styles.row}>
-                <View style={styles.container}>
-                    <Text>{expression}</Text>
-                </View>
-            </View>);
-            }
-        )
-    }
-    </ScrollView>
-</View>
-);
-}
-
-const CalculatorScreen  = ({navigation}) =>{
-
-const [text, setText] = useState('');
+function CalculatorScreen (){
 
 return (
 <View style={styles.column}>
@@ -94,21 +41,10 @@ return (
                <CalculatorButton label={'+/-'} style={styles.numberKeys} onClickFunction={()=>setText(tex+" -")}/>
                <CalculatorButton label={'0'} style={styles.numberKeys} onClickFunction={()=>setText(text+"0")}/>
                <CalculatorButton label={'.'} style={styles.numberKeys} onClickFunction={()=>setText(text+".")}/>
-               <CalculatorButton label={'='} style={styles.numberKeys} onClickFunction={()=>enterButtonOnClick(text, setText)}/>
+               <CalculatorButton label={'='} style={styles.numberKeys} onClickFunction={()=>setText(parseExpression(text))}/>
             </View>
-            <Button title="Go to second screen" onPress={()=> navigation.navigate('History', {list: expressionList})}/>
     </View>
     );
-
-}
-
-const enterButtonOnClick = (text, setText) => {
-var answer = parseExpression(text);
-if (answer != "error"){
-var expression = text + " = " + answer;
-expressionList.push(expression);
-setText(answer);
-}
 
 }
 
