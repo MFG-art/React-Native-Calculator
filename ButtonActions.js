@@ -1,4 +1,5 @@
 import { evaluate } from 'mathjs';
+import {ToastAndroid} from 'react-native';
 
 
 const add = (x,y) => {
@@ -35,10 +36,19 @@ const parseExpression = (expression) => {
     //     val = stack.pop();
     //     console.log(val + "\n");
 
+
     // }
+    try {
     var answer = evaluate(expression);
-    console.log(answer)
-    return answer.toString();
+    return answer;
+    }
+    catch (error){
+//    ToastAndroid.show('Invalid expression!', ToastAndroid.SHORT);
+    return "error";
+
+
+    }
+
 }
 
 class Stack {
