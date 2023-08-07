@@ -13,9 +13,6 @@ var expressionList = [];
 
 export default function App() {
 
-
-
-
   return (
   <NavigationContainer>
   <Stack.Navigator>
@@ -35,6 +32,8 @@ navigation.navigate('History', {list: expressionList});
 
 const HistoryScreen = ({navigation, route}) => {
 
+var i = 0;
+
 
 return(
 <View style={styles.column}>
@@ -43,7 +42,7 @@ return(
     {route.params.list.map(
         expression => {
             return(
-            <View style={styles.row}>
+            <View style={styles.row} key={i++}>
                 <View style={styles.container}>
                     <Text>{expression}</Text>
                 </View>
