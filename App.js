@@ -6,15 +6,13 @@ import CalculatorButton from './CalculatorButton.js';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-//import CalculatorScreen from './CalculatorScreen.js'
 
 const Stack = createNativeStackNavigator();
 var expressionList = [];
 
+// App contains navigation and lists two screens
+
 export default function App() {
-
-
-
 
   return (
   <NavigationContainer>
@@ -27,6 +25,8 @@ export default function App() {
   );
 }
 
+// Helper function for clear history button
+
 function clearHistory(navigation){
 expressionList.length = 0;
 navigation.navigate('History', {list: expressionList});
@@ -36,6 +36,8 @@ navigation.navigate('History', {list: expressionList});
 const HistoryScreen = ({navigation, route}) => {
 
 
+var i = 0;
+
 return(
 <View style={styles.column}>
 <Button title="Clear History"  onPress={()=>clearHistory(navigation)} />
@@ -43,7 +45,7 @@ return(
     {route.params.list.map(
         expression => {
             return(
-            <View style={styles.row}>
+            <View style={styles.row} key={i++}>
                 <View style={styles.container}>
                     <Text>{expression}</Text>
                 </View>
@@ -56,12 +58,17 @@ return(
 );
 }
 
+
+// Calculator screen contains calc buttons, display and display state
+
 const CalculatorScreen  = ({navigation}) =>{
 
 const [text, setText] = useState('');
 
 return (
 <View style={styles.column}>
+
+
         <View style={styles.screenContainer}>
             <Text style={styles.screen}>{text}</Text>
         </View>
@@ -96,11 +103,15 @@ return (
                <CalculatorButton label={'.'} style={styles.numberKeys} onClickFunction={()=>setText(text+".")}/>
                <CalculatorButton label={'='} style={styles.numberKeys} onClickFunction={()=>enterButtonOnClick(text, setText)}/>
             </View>
-            <Button title="Go to second screen" onPress={()=> navigation.navigate('History', {list: expressionList})}/>
+
+
+            <Button title="Go to History screen" onPress={()=> navigation.navigate('History', {list: expressionList})}/>
     </View>
     );
 
 }
+
+// Helper method for enter button
 
 const enterButtonOnClick = (text, setText) => {
 var answer = parseExpression(text);

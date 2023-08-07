@@ -7,8 +7,10 @@ export default class CalculatorButton extends Component {
     super(props);
     }
 
+// This allows us to access the passed lambda function props
+
     onClickFunction = () => {
-    this.props.onClickFunction?.(); // we do this to check if it is not null
+    this.props.onClickFunction?.();
     }
 
     render(){
@@ -21,35 +23,10 @@ export default class CalculatorButton extends Component {
 }
 
 
-
 const styles = StyleSheet.create({
-    
-    numberKeys:{
-       backgroundColor:'darkgray',
-       alignItems: 'center',
-       padding: 10,
-       flex: 1,
-       margin:5,
-       borderRadius:999,
-    },
-    text: {
-        color:'#262626',
-        fontSize: 20,
-    },
     CText: {
         color: '#FFFFF0',
         fontSize: 20,
-    },
-    CButton: {
-        backgroundColor:'#CD5C5C',
-        alignItems: 'center',
-        padding: 10,
-        flex: 1,
-        margin:5,
-        borderRadius:999,
-    },
-    buttonBackground:{
-        backgroundColor:'#404040'
     }
   });
   
